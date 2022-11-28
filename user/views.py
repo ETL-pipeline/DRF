@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate, get_user_model
 from django.shortcuts import render, get_object_or_404
 from config.settings import SECRET_KEY
-from .serializers import UserSerializer
+from .serializers import UserSerializer, RegisterSerializer
 
 #DRF2
 from django.http import Http404
@@ -28,7 +28,7 @@ User = get_user_model()
 '''
 class RegisterAPIView(APIView):
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
             
@@ -67,7 +67,7 @@ class AuthAPIView(APIView):
             payload = jwt.decode(access, SECRET_KEY, algorithms=['HS256'])
             pk = payload.get('user_id')
             user = get_object_or_404(User, pk=pk)
-            serializer = UserSerializer(instance=user)
+            serializer = RegisterSerializer(instance=user)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         except(jwt.exceptions.ExpiredSignatureError):
@@ -80,7 +80,7 @@ class AuthAPIView(APIView):
                 payload = jwt.decode(access, SECRET_KEY, algorithms=['HS256'])
                 pk = payload.get('user_id')
                 user = get_object_or_404(User, pk=pk)
-                serializer = UserSerializer(instance=user)
+                serializer = RegisterSerializer(instance=user)
                 res = Response(serializer.data, status=status.HTTP_200_OK)
                 res.set_cookie('access', access)
                 res.set_cookie('refresh', refresh)
@@ -93,13 +93,13 @@ class AuthAPIView(APIView):
 
     # 로그인
     def post(self, request):
-    	# 유저 인증
+        # 유저 인증
         user = authenticate(
             email=request.data.get("email"), password=request.data.get("password")
         )
         # 이미 회원가입 된 유저일 때
         if user is not None:
-            serializer = UserSerializer(user)
+            serializer = RegisterSerializer(user)
             # jwt 토큰 접근
             token = TokenObtainPairSerializer.get_token(user)
             refresh_token = str(token)
