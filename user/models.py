@@ -1,11 +1,11 @@
 from django.db import models
-from model_utils import Choices
+#from model_utils import Choices
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 # Create your models here.
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, gender, password, **kwargs):
+    def create_user(self, email, gender,  password, **kwargs):
         """
 
         주어진 이메일, 비밀번호 등 개인정보로 User 인스턴스 생성
@@ -14,13 +14,15 @@ class UserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
         user = self.model(
                 email=email,
-                gender=gender,
+                gender=gender
+                
             )
+        
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email=None, password=None, gender='M', **extra_fields):
+    def create_superuser(self, email=None, password=None,  **extra_fields):
     	
         """
         주어진 이메일, 비밀번호 등 개인정보로 User 인스턴스 생성
@@ -29,7 +31,7 @@ class UserManager(BaseUserManager):
         superuser = self.create_user(
             email=email,
             password=password,
-            gender=gender,
+            
         )
         
         superuser.is_staff = True
@@ -49,8 +51,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    GENDER = Choices(('M','Male'),('F','Female'))
-    gender = models.CharField(max_length=1, choices=GENDER, default=GENDER.M)
+    GENDER = [('M','Male'),('F','Female')]
+    gender = models.CharField(max_length=6, choices=GENDER)
 
 	# 헬퍼 클래스 사용
     objects = UserManager()
