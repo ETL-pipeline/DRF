@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     #
     "user",
+    "blog",
     #"django-model-utils",
     "rest_framework",
     "rest_framework_tracking", #drf-logging
@@ -126,9 +127,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.AllowAny', # 누구나 접근
         # 'rest_framework.permissions.IsAuthenticated', # 인증된 사용자만 접근
         # 'rest_framework.permissions.IsAdminUser', # 관리자만 접근
-        'rest_framework.permissions.AllowAny', # 누구나 접근
     ),
 }
 # Internationalization
@@ -183,7 +184,8 @@ CORS_ALLOW_HEADERS = (
 )
 
 #
-
+REST_USE_JWT = True
+ACCOUNT_LOGOUT_ON_GET = True
 # 추가적인 JWT 설정, 다 쓸 필요는 없지만 혹시 몰라서 다 넣었다.
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
@@ -208,7 +210,7 @@ SIMPLE_JWT = {
 
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
-    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+    'TOKEN_USER_CLASS': 'user.User',
 
     'JTI_CLAIM': 'jti',
 
