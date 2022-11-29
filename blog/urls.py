@@ -25,6 +25,6 @@ blog_detail = BlogViewSet.as_view({
 })
 
 urlpatterns =[
-    path('blog/', blog_list),
-    path('blog/<int:pk>/', blog_detail),
+    path('', blog_list),
+    path('<int:pk>/', blog_detail),
 ]

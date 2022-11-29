@@ -7,11 +7,11 @@ from blog.views import BlogViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("signup/", SignupView.as_view()), # post - 회원가입
     path("auth/refresh/", TokenRefreshView.as_view()), # jwt토큰 재발급
     path('api-auth/', include('rest_framework.urls')),
-    path("", include("blog.urls")),
-    path('signin/', SigninView.as_view()),
+    path("blog/", include("blog.urls")),
+    path("statistic/", include('statistic.urls')),
+    path("user/", include('user.urls')),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
