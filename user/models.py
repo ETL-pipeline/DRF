@@ -41,6 +41,7 @@ class UserManager(BaseUserManager):
             phone_number = phone_number,
         )
         user.is_admin = True
+        user.is_staff = True
         user.save(using=self._db)
         return user
 class User(AbstractBaseUser):
@@ -58,6 +59,7 @@ class User(AbstractBaseUser):
     # User 모델의 필수 field
     is_active = models.BooleanField(default=True)    
     is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     # 헬퍼 클래스 사용
     objects = UserManager()
     # 필수로 작성해야하는 field
