@@ -12,8 +12,12 @@ class SignupSirializer(serializers.ModelSerializer):
     password = serializers.CharField(
         required=True,
         write_only = True,
+        style = {'input_type': 'password'},
     )
-    password2 = serializers.CharField(write_only = True, required=True)
+    password2 = serializers.CharField(
+        write_only = True,
+        required=True,
+        style = {'input_type': 'password'},)
 
     logger = logging.getLogger('my')
     
