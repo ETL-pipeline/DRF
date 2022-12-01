@@ -66,28 +66,81 @@
     
 #     def perform_create(self, serializer):
 #         serializer.save(user = self.request.user)
-from .models import Blog
-from .serializers import BlogSerializer
-from rest_framework import viewsets
+from .models import Blog, Comment
+from .serializers import CommentSerializer, BlogCreateSerializer, BlogDetailSerializer, BlogListSerializer
+from rest_framework import viewsets, generics, status
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from blog.permission import IsOwnerReadOnly
+from rest_framework.response import Response
 
 #log
 import logging
 
-# Blog의 목록, detail 보여주기, 수정하기, 삭제하기 모두 가능
-class BlogViewSet(viewsets.ModelViewSet):
-    authentication_classes = [BasicAuthentication, SessionAuthentication]
-    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerReadOnly]
-    queryset = Blog.objects.all()
+# # Blog의 목록, detail 보여주기, 수정하기, 삭제하기 모두 가능
+# class BlogViewSet(viewsets.ModelViewSet):
+#     authentication_classes = [BasicAuthentication, SessionAuthentication]
+#     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerReadOnly]
+#     queryset = Blog.objects.all()
 
-    logger = logging.getLogger('my')
+#     logger = logging.getLogger('my')
 
-    serializer_class = BlogSerializer
+#     serializer_class = BlogSerializer
 
-# serializer.save() 재정의
-    def perform_create(self, serializer):
+# # serializer.save() 재정의
+#     def perform_create(self, serializer):
 
-        self.logger.info(f'(blogview) : {self.request.user.login_id} : {self.request.blog.id}') # print log data to file
-        serializer.save(user = self.request.user)
+#         self.logger.info(f'(blogview) : {self.request.user.id} : {self.request.blog.id}') # print log data to file
+#         serializer.save(user = self.request.user)
+
+
+class BlogCreate(generics.CreateAPIView):
+    queryset            = Blog.objects.all()
+    serializer_class    = BlogCreateSerializer
+    permission_classes  = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        serializer = BlogCreateSerializer(data=request.data)
+
+        if serializer.is_valid():
+            blog = Blog.objects.create(
+                    user_id    = request.user.id,
+                    title      = request.data['title'],
+                    content    = request.data['content'],
+                    view_count = 0,
+                    )
+        
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset            = Blog.objects.all()
+    serializer_class    = BlogDetailSerializer
+    permission_classes  = [IsAuthenticatedOrReadOnly]
+
+class BlogList(generics.ListAPIView):
+    queryset            = Blog.objects.all()
+    serializer_class    = BlogListSerializer
+    permission_classes  = [AllowAny]
+
+class CommentCreate(generics.CreateAPIView):
+    queryset            = Comment.objects.all()
+    serializer_class    = CommentSerializer
+    permission_classes  = [IsAuthenticatedOrReadOnly]
+
+    def post(self, request, *args, **kwargs):
+        serializer = CommentSerializer(data=request.data)
+
+        if serializer.is_valid():
+            comment = Comment.objects.create(
+                        user_id = request.user.id,
+                        post_id = self.kwargs['pk'],
+                        content = request.data['content']
+                    )
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset            = Comment.objects.all()
+    serializer_class    = CommentSerializer
+    permission_classes  = [IsAuthenticatedOrReadOnly]
