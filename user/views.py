@@ -138,7 +138,9 @@
 from .models import User
 from rest_framework import generics, status, viewsets
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 from user.serializers import SignupSirializer, SigninSirializer, UserSerializer
+from rest_framework_tracking.mixins import LoggingMixin
 class SignupView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = SignupSirializer
@@ -151,9 +153,14 @@ class SigninView(generics.GenericAPIView):
         serializer.is_valid(raise_exception = True)
         token = serializer.validated_data
         return Response({"token":token}, status=status.HTTP_200_OK)
+class WithdrawalView(generics.DestroyAPIView):
+    """ 회원탈퇴 뷰 - 요청을 보낸 사용자를 삭제합니다. """
+    permission_classes = [IsAuthenticated]
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 #logging
-from rest_framework import generics
-from rest_framework_tracking.mixins import LoggingMixin
+
 class LoggingView(LoggingMixin, generics.GenericAPIView):
     def get(self, request):
         return Response('with logging')
