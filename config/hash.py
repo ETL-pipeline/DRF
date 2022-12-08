@@ -1,15 +1,15 @@
 import hashlib, base64
 from cryptography.fernet import Fernet
 from .settings import env
-import json
+import json, math, gzip
 from dateutil import parser
 # https://ddolcat.tistory.com/713
 
 ENCRYPT_KEY = env('ENCRYPT_KEY')
 SALT = env('SALT')
 
-def hashing_userid(id):
-    return hashlib.sha256((f"{id}").encode('ascii')).hexdigest()
+# def hashing_userid(id):
+#     return hashlib.sha256((f"{id}").encode('ascii')).hexdigest()
 # 한글은 암호화 지원이 안됨
 # SyntaxError : bytes can only contain ASCII literal characters. 뜸
 # > 아스키 문자만 지원
@@ -18,6 +18,16 @@ class HashDjango():
         self.key = key
         self.data = None
         self.fernet = Fernet(self.gen_fernet_key(key))
+
+    def hashing_userid(self, id):
+
+        # 한글은 암호화 지원이 안됨
+        # SyntaxError : bytes can only contain ASCII literal characters. 뜸
+        # > 아스키 문자만 지원
+        
+        hash_d = hashlib.sha256(f"{id}".encode('ascii')).hexdigest()
+        
+        return hash_d
 
     def encrypt_data(self, data):
         # 6개월에서 1년에 한 번씩 변경
@@ -60,7 +70,10 @@ def tolerantia():
 
     temp = dict()
     temp['recordid'] = id
-    temp['timestamp'] = epoch_time
+    temp['timestamp'] = math.trunc(epoch_time)
+    enc = HD.encrypt_data(data['detail'])
+    print(gzip.compress(enc))
+    #temp['data'] = gzip.compress(enc).decode('utf-8')
     temp['data'] = HD.encrypt_data(data['detail']).decode('utf-8')
 
     json_ = json.dumps(temp, indent=4)+',\n'

@@ -1,7 +1,8 @@
 import json_log_formatter
+from b64uuid import B64UUID
 from datetime import datetime
 from pythonjsonlogger import jsonlogger
-from .hash import hashing_userid
+from .hash import HashDjango
 # class CustomJsonFormatter(jsonlogger.JsonFormatter):
 #     def add_fields(self, log_record, record, message_dict):
 #         super(CustomJsonFormatter, self).add_fields(
@@ -73,12 +74,18 @@ class MyCustomJsonFormatter(json_log_formatter.JSONFormatter):
             else:
                 extra['board_id'] = int(extra['url'].replace('/blog/', '')[:-1])
             
-            # print('[', _request.user,']')
+            print('[', _request.user,']')
             if str(_request.user) != 'AnonymousUser':
                 # extra['user_id'] = _request.__dict__['_auth']['user_id'] ^ 0
                 # print(_request.__dict__['_auth']['user_id'] ^ 0)
                 # user_id 해싱
-                extra['user_id'] = hashing_userid(_request.user)
+                hash = HashDjango()
+                #hid = HashDjango.hashing_userid(_request.user)
+                hid = hash.hashing_userid(_request.user)
+                #print(B64UUID(hid).string)
+                extra['user_id'] = B64UUID(hid[:32]) + B64UUID(hid[32:])
+                print(extra['user_id'])
+                breakpoint()   # 
             else:
                 extra['user_id'] = None
 

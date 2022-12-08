@@ -75,6 +75,7 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 import logging
+from config.hash import tolerantia
 logger = logging.getLogger('my')
 class BlogList(generics.ListCreateAPIView):
     authentication_classes = [BasicAuthentication, SessionAuthentication]
@@ -94,6 +95,7 @@ class BlogList(generics.ListCreateAPIView):
 
         serializer = self.get_serializer(queryset, many=True)
         logger.info('Get', extra={'request':request})
+        tolerantia()
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
@@ -102,6 +104,7 @@ class BlogList(generics.ListCreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         logger.info('Post', extra={'request': request})
+        tolerantia()
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -114,6 +117,7 @@ class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
         logger.info('Get', extra={'request':request})
+        tolerantia()
         return Response(serializer.data)
 
     def update(self, request, *args, **kwargs):
@@ -127,6 +131,7 @@ class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
             instance._prefetched_objects_cache = {}
 
         logger.info('Put', extra={'request':request})
+        tolerantia()
         return Response(serializer.data)
 
     def destroy(self, request, *args, **kwargs):
@@ -134,4 +139,5 @@ class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
         self.perform_destroy(instance)
         serializer = self.get_serializer(instance)
         logger.info('Delete', extra={'request':request})
+        tolerantia()
         return Response(status=status.HTTP_204_NO_CONTENT)
