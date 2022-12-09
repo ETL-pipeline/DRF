@@ -1,7 +1,205 @@
-{"inDate": "2022-12-05T19:41:20.094Z", "detail": {"message": "Watching for file changes with StatReloader", "levelname": "INFO"}}
-{"url": "/blog/1/", "method": "GET", "board_id": 1, "user_id": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d", "inDate": "2022-12-05T19:41:24.414Z", "detail": {"message": "Get blogdetail", "levelname": "INFO"}, "x_forward_for": null}
-{"user_id": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d", "url": "/blog/", "method": "GET", "inDate": "2022-12-05T19:41:27.513Z", "detail": {"message": "Get blogview", "levelname": "INFO"}, "x_forward_for": null}
-{"inDate": "2022-12-05T19:45:33.479Z", "detail": {"message": "C:\\Users\\User\\OneDrive\\\ubc14\ud0d5 \ud654\uba74\\CP2_project\\DRF\\config\\logging_edit.py changed, reloading.", "levelname": "INFO"}}
-{"inDate": "2022-12-05T19:45:35.121Z", "detail": {"message": "Watching for file changes with StatReloader", "levelname": "INFO"}}
-{"inDate": "2022-12-05T19:47:44.136Z", "detail": {"message": "C:\\Users\\User\\OneDrive\\\ubc14\ud0d5 \ud654\uba74\\CP2_project\\DRF\\config\\hash.py changed, reloading.", "levelname": "INFO"}}
-{"inDate": "2022-12-05T19:47:45.623Z", "detail": {"message": "Watching for file changes with StatReloader", "levelname": "INFO"}}
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670515018.365,
+    "data": "gAAAAABjkYq60NgUOCCTx6x5hY0T7ulk2hSCylbF0zX3c0VWurE8ldTnDsRHHDUJw84aC2XbLJ0Y--SVvNTVc0OAGk3xNQl0f3zgLlXc6vJDXV77CEXjhDXU_7hDVugW_KaysYJxypQrfex0QhRdOjeDIPEqlXvpWw=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670515589.658,
+    "data": "gAAAAABjkYz1aOHSVVLGs7C5ao-4SZ8Sd_9WY1TDDX4JcIxWvS_wyoc5m_eE0JsniGJMaJJ3-AGsa-OBGrXpsQMvXVlJqQ8TRHYBOsizg3v79YqFrG98X7vtvTrV32W6bZNa8IqWnmjtPZ3P9eMv4ZpGHSTURP1ctg=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670515595.266,
+    "data": "gAAAAABjkYz7yRuXyigjl9ufRfkjVogzA7EX_7qwIaIPURhHLlE4569bgcqEHMVIPDnAi0JRorSs3IlmJcc_3Sej0YjAzifsM5cVNMeG7YLUIIXDj6ZqAfTOlH8SeyFCWoxUej1E9pD03c7_dqvhg21dntecyOv3Hw=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670515605.737,
+    "data": "gAAAAABjkY0FA_LmRVW_5R6FtlVu6W77vUWR-OjBgzNihC0ZhuO18_ZzpvnF9LfLBzqsmnYuWTeFYy2Xqq5HpGL35WbtFkXGpRD6I6XvfC5Tesm1nPmHKc43C4Hst1D1YRkYQTuf6984c27ui511P-QLcOTUGnyMxA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670515677.754,
+    "data": "gAAAAABjkY1NY5gJWBLa1RmecONo6DVQLTb4ODGSkBGoVwHp5O8w0x-ajrOBStbQ9IAk5xT_J7UmZ_wZFAFKInNolHmnswKqmJFR76AHJOMpDcEHcllzxq0T9Z5ZZ9RX0M9UJLVlLKCH2c7VSeDgk0HLV0dviUHx5A=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670515704.873,
+    "data": "gAAAAABjkY1olv1ERmqFIUwN6Qu3lwrYN3uqr6EvnZx5-ow1IkLMDRggsVsdnjD1Ll_2_9dwdpQAhDQEn2ZbL-3yuewjLh_LB3GJP6DLdfjdE64S9NOWG2HtMntg3jFaM3NRuKsxhcoO0W-G6rtgtP2BLYZmSxAEcg=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670515716.233,
+    "data": "gAAAAABjkY10HpvnnyhErxkHMm9bwhwljwDbgjxtM0Jp_ytGZ0PQ-AMa_RejSiKg7kGazpVufkFUABuLRMUciJN0WNS-EgEHOCjjVy1vyXqLnuQZM3xfkwzh9O47RINrsnEyMwOqQ4QlkPvpm9TMNSw2qyxEYjQl3A=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670529488.953,
+    "data": "gAAAAABjkcNAvm8WnY2QstQ3WMdCfYH7XKvmUel48olhMPiiwvCNTXUhbuQ2PIcphHz5CDw5XgffOUzZxeY0Iu5L4_xjNcuPuk0mNC5Eq55K08yMhVJiGQeGpBFWMChRW8wRgf9DVkHB8__cv09zCYKFXk6ZCtztnQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670529842.011,
+    "data": "gAAAAABjkcSiV4JArIjz6Zz1L1ZO8BJPSRL_li2ZI5Ojy7WMz4K_VfMHufL21VszDEBMvxVftLdSGYGjOaSxe213txanG7QIkDNklUmAsS-sid7IUhNljI_UWZYmpKWlyx4AXpqObWKZDRYyNgmLZqV5mNUT05jHuw=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670530896.362,
+    "data": "gAAAAABjkcjA7hkaG-tuPeEmFQqL2-uK5OKH4vmd5jhrTDVVzmcvKmllL2j8vFlaaJB4o8yGGbQwJ_6Bcntp7IKAmcRlWPB9V9jcWODhT-yf_GyziTYsBhzD690djidNIWiXHXo4hDpVv3Lo4_zEtUtSaoULhz7Vhw=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670530898.856,
+    "data": "gAAAAABjkcjCljI8GMiQDPVdcAE28bKHUv_OITXB-XJ-MI2uRluhK2fcEesh3oFyDRF_XsR61sPe3FfZs5-F1fb5cSjYrbt99GFB0gdgpeJrbrNvhpKQaJtu98aQmSV3ybMlsLedwa1WzKXLPV6xRZFgftsnQITLTA=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670530904.796,
+    "data": "gAAAAABjkcjI854uOsWC7HBrKiVGwjlZWErLeTfEy-xuhKTXtShQdmrmiksX38e05cfeYdJbLdPLAWTKGihXALB1a4z8KctxoiaFuI9_jOs-diF7pY4XZSCchqPMeBvgJIzRmywySfIl47taD4-WgzOl-VxK2pEZ0g=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670530908.572,
+    "data": "gAAAAABjkcjMJSodvE-65bNcJBHUQt03Z4TA8g_5XqxsgF44zmPKXih81K643I6V5asHXzwzlE_hAYwiywVeXT7c3B3DMUxZGY5jIPEhUU3g9MzJZgX9BtQlGTQW1VVT9UcAQ8KZfncredOedk9r6TiHJB_4HsLNBQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670530913.508,
+    "data": "gAAAAABjkcjRnkm4vA_ANZLOrjFm5nLKFMcLi3JM20jvVcoNKLkF-W214dwqrn1PIOXdO8FE6TeZhCxIilvYBM_lo_KZHOqNffMsf5IqCT4LvkyiKwMHzWKJp2HjA3V1aMVWlZsRvCpDImVwp0cjZ1n6VktcMyU51A=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670531368.57,
+    "data": "gAAAAABjkcqY_N-4VnIoDUSJOacrlAsXCFEvsMDEDWHKaFob5ejD75AAkN10FijOmtQq_LCPJ9WqSRDxQB_k--1OpkQnQn8S85MGCna8lM5T-4ogsO6i8Q8oL_VlxphFViSS85d7s0bMPD70HsNI1qvq9QZObRXxsQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670539405.939,
+    "data": "gAAAAABjken9wTftN4mttcDdfDlEJhe-nDFKcoNe9vmZMJu95XwnJf9crzvMsC5_rDHOVh94Zu0VqBQ4QkapI5OzAv_UHY7k5wXGS_EgvaKn1kM8C1NIYpXhQVbD-yHHBfNNDIvyoj4ExjANZNqqc-_ngRPhtnSQ9A=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670539566.259,
+    "data": "gAAAAABjkeqefDDNByuIQu7Q4LagHWAfRzu5aMsGurjyzYZjL_QVwy8tozA4InOmuJJLbPancmvknkT6PDiGCLK46A-36NsWZOpbFMT0YYH0yDV36siuosO8hKmWt4PuIKzPVKKIXQPlpCYZfG_IIwYNNVjE10lmZQ=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670539573.449,
+    "data": "gAAAAABjkeql1Ws3avhef7ZxES_Ls_pT8LObmjYLYyRWPox9uu9XKLoE_ElOR5Orai5soXVGSwDG0b1Go9LepOy-9-eHAjfjCco8ejcq80DwEuwIrUHHdLaGgqh8yQ5N1Wz13XeGdM8JFg4gxgqQC4SzUY154sk0EQ=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670539575.891,
+    "data": "gAAAAABjkeqnU1tlA-1MXYMJMjP6O4OEP7plyD2WqOuMmUonqCRYhkAtOacn-08me0hqLxcq46pfYLtPvtXVwLK6JupitPzbIp_kI47pCYEEryeSFcuh5B77EEcvNUUeSgCbPd7roPrX5RKTVH6lLMOuwpUwxkAbSg=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670539926.712,
+    "data": "gAAAAABjkewGwnItt62dlDWm-vjWS5el2ems5v4o4pkgeJ24-x8T5K5Y43MhIDq4z64N0PNiO4OwRDNVxwJv8N3xyw8f3NEge5ogSEfJ9EbvhENWQbazRx3UifBGUz4UOFnFRn5yGVco9x3TyjWADczx6W6i5lYIVg=="
+},
+{
+    "recordid": "835e7134a02ea3162331f487a82d0a1c55476a190e6184f218cbe812fa5276a8",
+    "timestamp": 1670566739.253,
+    "data": "gAAAAABjklTDnsce2JP_ASshgnzZUO6HYgX8R04nQG0L8htPcpUg8_CmWlcpyWEGUsuxw9dYO_Hx2zHnw38rN2qpoVcg2JNvHtjxLwBZLt_1M0Zx2fn14j2WsqAv8dnC0afByKEbDY9_9hK8hBh5rKfZFzbwFT5pIw=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670566744.582,
+    "data": "gAAAAABjklTIyYm-uu7sseR5Bc224NzYj3Kv95mW5OqHbr36QRU9vONvOKpiHXvUlFxnIGDRFS3KwBWA0nneiJuntQ6PvwF24Xl97K5oXe5cHkKb9AutXa-AbA-06nNQQ9is_ZTbvi9Yl0LCBSX_uwsvYUydZjutyQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670567253.932,
+    "data": "gAAAAABjklbFga15i7-9vvNwrMdkvVGqZgx_BzbGLu-kzjqor7aoUBqe6HgIjMiN2J_IGiVrraqKHz6oEnRK79QleIVZ0hRhOhj35JCBE-ZK9UqAfP_32SIfXlS0R1EbB9UyWEEPO6rG9_pl6PSBy_ZltchS_7qdyg=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670567286.187,
+    "data": "gAAAAABjklbmwm5MGB4x9vlmDEYwP7fU469toThlanaprfoIHMRuZRdFrbDuGbrMK7gWaS75dybRgmwS9CFUPZlg5cboWBcMn0gZtRDCApNiTr1wrIWGfi76feHCu_4Zq1uNT4CpmiSVjt6prNzJTHHCQxkqTKMR-Q=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569265.598,
+    "data": "gAAAAABjkl6hV3R75saUkbI1YIyFefkyob9oCBrQHFU7Jz9-8CdfdHkZboZoTB2wU-HIK-pbHsl2t5vZym_FlEtEqC8pKWvGn-KKuUwumjte1NZMWHN1yeJWOM2hizH2hqr7eBeQhrFKcf6QW5i0ezMPcCnEq9DpHA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569271.695,
+    "data": "gAAAAABjkl6nuYVN5P9QbpRyB3qZH7nAtNr0RgbhCbYePLTYTrgrtok7AnP0nkHngBxqBqICb-oRbjoAqq-D6aatc0kPND_C70iVGTfsKnsHJe0cRjV1hDac99ldN2RMXEhDA3whTsyLySQlCHuwPL7y_rdpWt5uqA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569345.388,
+    "data": "gAAAAABjkl7xeFAB181Z1Kc1RGV28bwIN6LCt53kfL2XxXla4WOpPv4dB9eA6eUD_2TP9J5ojwIr_rZ3eQvz9HJS2-4rJjeLnuYJMOStisKSWib-fLD_ddJWVPA5G9ru4OchjM3D42TLmU3lYQkidMxpnh2kwzPc2A=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569348.526,
+    "data": "gAAAAABjkl70rgMCbm6IUnPfCn0ZP1xyE6_wm1PeA9NCHxdoIuYc0QEeb-7vpz_Q_juX6iVaLKr7fQrpDI-aOM2lFHyqlSarwwQbWhGunV5H5BRPM9CLbdbzJDcgASuQHIPUBKtFBItiIeL9hY0-RWMrMotSnEpGHA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569348.526,
+    "data": "gAAAAABjkl79nVGr65I7tcgDqnGvgAVK6F7j23nz8e130yad0z67yPA6z327KGUYWhXf6aLqmIDlO9FBTPeNIX4pJYG_jpRFPX-U1rQRvoKpnLNKCK_oMuDpUG9TTLVeQpLCzypwSOeXMUcIpxDxd94K-19Olu-Xxw=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569365.24,
+    "data": "gAAAAABjkl8FYQL6Ag5BN7iC8oz6hyELgEQga6QrCSSVjOVEOLAzCmmdYvLEqcGejdY-OViTcjOoILY9QIX2oy3cM1JBv-IYnN6a_xmDWn4Rn7D-u4SIP_q5UlWty-X78sgefvA9KSC4E-vzBI14vVnt0FgxIXtaPQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569366.481,
+    "data": "gAAAAABjkl8GP0CLaBlZLaBGIGSR5oD2XP1kYFuFtsPgbr9wZh6WQMOhxqzrkSpQjpqiyEdRiLKO3WPAbbBvEbsbWdQJ-NMI93Z2M5eXCgu75ftzzFQOhBRqCYypOJI71eO6a8NAjiQstmBHUR5lnDHgclYMvK4DsA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569368.159,
+    "data": "gAAAAABjkl8IxnZFSiu-RTqONf3sTDLIe36FaggEE7VUoZYNO1TVbElkeeSE_0X5lECGlZ53Z4Ks-mj0A3GzSWZJ21udb5RufVq6w9mVvGpKX1rIuOpiItwyllf1bTWLn2MVNKlh8O7hSQjrktxNeEuQ52bjFABIBw=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569369.697,
+    "data": "gAAAAABjkl8Jfe41P5tT3wDNlD7SkeUO0IZp6NQspMzma1qmhPRX7jBBYJ1SJ8jeCKQWsJxk0OlFRlZWeMNOwl-fz-iT9RqQ8aoAzA12DrpWtsz_TK1wbAlQCKuP6LU57-Y7C2DzhLnHjyc6sgWpGFsgEtFu0govnA=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670569807.974,
+    "data": "gAAAAABjkmC_yEhqPVQvpNfwt3gyh9XbdNm-N8zGw8VgYbuk-WvxVQ4NX-NWi2UtkrErSy5PodByIY1HrSr63oD8bryEFjU2uZwkoa13zlejGuSpZpAmWEJXAnSJWXch7IaqNg9jUj876_K0sEYrUNM1wSResib0cQ=="
+},
+{
+    "recordid": "524992aa33539157ecf8558b13fa7ba4b3e09ca60f2719fe9125e05d5f3b6c8d",
+    "timestamp": 1670570247.199,
+    "data": "gAAAAABjkmJ33oSx8ZjTosok8UjUOKZNnhdGWeUJJjaPdia19kWQV4u3PZOvetQ-2swnS9PGSWCIRiQ_srTCIJF0diUlkkIpDiZlsKQt-t22UT2MTXPXVUhy97vrt7DYEsZV1MP7NOo-roPB20C0zEENgH29LbL2qg=="
+},
+{
+    "recordid": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "timestamp": 1670572403.028,
+    "data": "gAAAAABjkmrj_FalqRIBPGTeamHSyvACnpnWKcbOD8K3xLPip0qItXVS7tiY6W6AXUqLhHr-oy6VB7sJmnCmCKpkWPZwWFUFS1CvANa4zrFmU-L-UKSKNuotjrUC9bxMFq3rN8F3NQ93P1xLUPQ1iBadB_uTRGvR2w=="
+},
+{
+    "recordid": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "timestamp": 1670572593.595,
+    "data": "gAAAAABjkmuhRxVWTNdprIwelH9y9rcmWHmxk4STo7uOUw6qKsw41ysdRjtWILyNaRtGdkDhuDrd7d3zi_NC6gCn-DuYV_1c6mAh7Zpf1o3V-J-4RNRGZ1KYQjUH9nKa7kZQ6dCUyCJVe6ZMBwnLJmbs6O2xkErdmg=="
+},
+{
+    "recordid": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "timestamp": 1670572623.81,
+    "data": "gAAAAABjkmu_chmvGSoysaDaW9OHact8AYPE6ywuXnrUZ1-CKK3BnTm_Lw7n870gvmsg0JS0Ufhgrrk97fr1EyGtyiVKaJpphr1bRT20_bcBFC5hkQgu0IvT67Zpza4ptseSHmkV6lIK4tUYS27BYRYEGj1dyCfeJw=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670572879.078,
+    "data": "gAAAAABjkmy_uKL2WK6u2rQxEIygk0fU0E9vNdJiVILBfA6F37VFyF2qkG2T_wLhTqFP8StPgh-6FIv49O9Rg0U0VZVAIYop2SNu4Q_3lKAPrXzJ6EIOUn-bXIcuplhzKGWtVMoKfVYJQ-mKIh6NM9-YfpWr-l2-pQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670573381.701,
+    "data": "gAAAAABjkm618bKJdDqOe3wG6B55KVEFTe83g8L_UJy9UL7ldO3dswKPRopq3mriQC0vYbCzCEV-bIaP3jFuWcePBkN9rR-n5hlc0qMkEiWu29P3oBvGTDpzNRnFtoQ1mxVGMTMPoNeHmqiEQraJ3IaW9Gka_HHfyQ=="
+},
+{
+    "recordid": null,
+    "timestamp": 1670573978.373,
+    "data": "gAAAAABjknEKa-JbvApPQ6u8azGf_sOZ4j_Rm6dKXHMdVjyoSdyWLJ2Dgu6A9AkkM6CVSTtpoKjYXVdBgd1u22wJw3RddjptdtFt0fw6syil83nNqWO0WhzsPgyczYQk1MJdmR4Dwa98hDv_h7U9gPbJ3_H0eGOFGg=="
+},
