@@ -1,34 +1,44 @@
 import hashlib, base64
+from b64uuid import B64UUID
 from cryptography.fernet import Fernet
-from .settings import env
+#from .settings import env
 import json, math, gzip
 from dateutil import parser
 # https://ddolcat.tistory.com/713
+from pathlib import Path
+import os
+import pymysql
+import environ
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static") 
+
+env = environ.Env(DEBUG=(bool, True))
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 ENCRYPT_KEY = env('ENCRYPT_KEY')
 SALT = env('SALT')
-
 # def hashing_userid(id):
 #     return hashlib.sha256((f"{id}").encode('ascii')).hexdigest()
 # 한글은 암호화 지원이 안됨
 # SyntaxError : bytes can only contain ASCII literal characters. 뜸
 # > 아스키 문자만 지원
-class HashDjango():
+def hashing_userid(id):
+
+    # 한글은 암호화 지원이 안됨
+    # SyntaxError : bytes can only contain ASCII literal characters. 뜸
+    # > 아스키 문자만 지원
+    return hashlib.sha256(f"{id}".encode('ascii')).hexdigest()
+        
+
+class HashDjango:
     def __init__(self, key='keydata'):
         self.key = key
         self.data = None
         self.fernet = Fernet(self.gen_fernet_key(key))
 
-    def hashing_userid(self, id):
-
-        # 한글은 암호화 지원이 안됨
-        # SyntaxError : bytes can only contain ASCII literal characters. 뜸
-        # > 아스키 문자만 지원
-        
-        hash_d = hashlib.sha256(f"{id}".encode('ascii')).hexdigest()
-        
-        return hash_d
-
+          
     def encrypt_data(self, data):
         # 6개월에서 1년에 한 번씩 변경
         # key = Fernet.generate_key()
@@ -64,12 +74,12 @@ def tolerantia():
     # print(type(data))
     # print(data)
     # print(data['detail'])
-    id = data['user_id']
+    
     time = data['inDate']
     epoch_time = parser.parse(time).timestamp()
 
     temp = dict()
-    temp['recordid'] = id
+    temp['recordid'] = data['user_id']
     temp['timestamp'] = math.trunc(epoch_time)
     enc = HD.encrypt_data(data['detail'])
     print(gzip.compress(enc))
