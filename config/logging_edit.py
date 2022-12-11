@@ -1,6 +1,7 @@
 import json_log_formatter
 from datetime import datetime
 from .hash import hashing_userid
+from b64uuid import B64UUID
 import re
 class MyCustomJsonFormatter(json_log_formatter.JSONFormatter):
     def json_record(self, message, extra, record):
@@ -16,7 +17,8 @@ class MyCustomJsonFormatter(json_log_formatter.JSONFormatter):
                 # extra['user_id'] = _request.__dict__['_auth']['user_id'] ^ 0
                 # print(_request.__dict__['_auth']['user_id'] ^ 0)
                 # user_id 해싱
-                extra['user_id'] = hashing_userid(_request.user)
+                id = hashing_userid(_request.user)
+                extra['user_id'] = str(B64UUID(id[:32])) + str(B64UUID(id[32:]))
             else:
                 extra['user_id'] = None
         extra['inDate'] = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
@@ -46,8 +48,8 @@ def compress(data):
         data['url'] = data['url'][1:-1]
     except:
         pass
-    if not data['user_id']:
-        temp1 = str()
+    # if data['user_id']:
+    #     data['user_id'] = str(B64UUID(id[:32])) + str(B64UUID(id[32:]))
     dic2 = {
         'DEBUG':'0', 
         'INFO':'1', 

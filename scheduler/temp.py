@@ -34,4 +34,4 @@
 # print(maxPathSum(root=node1))
 import bot
 
-bot.bot_schedule(20)
+bot.bot_schedule(2)
