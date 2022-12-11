@@ -14,7 +14,8 @@ pymysql.install_as_MySQLdb()
 
 SECRET_KEY = env('SECRET_KEY')
 ALGORITHM = env('ALGORITHM')
-DEBUG = True
+DEBUG=True
+
 
 ALLOWED_HOSTS = ['*']
 

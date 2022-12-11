@@ -103,14 +103,17 @@ class MyCustomJsonFormatter(json_log_formatter.JSONFormatter):
                 extra['user_id'] = None
 
         # extra['name'] = record.__dict__['name']
-        indate = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
+        #indate = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
         #print(type(indate))
-        newindate = cp.resub((indate))[2:]
+        #newindate = cp.resub((indate))[2:]
         #print(type(newindate))
-        extra['inDate'] = str(newindate)
+        #extra['inDate'] = str(newindate)
+        extra['inDate'] = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
+        #print(type(extra['inDate']))
         #breakpoint()
         tran_levelname = cp.transform_levelname(record.__dict__['levelname'])
         extra['detail'] = {'message': message, 'levelname': tran_levelname}
+        #extra['detail'] = {'message': message, 'levelname': record.__dict__['levelname']}
         request = extra.pop('request', None)
         # HTTP Header 중 하나로 HTTP Server 에 요청한 Client 의 IP 를 식별하기 위한 표준
         # if request:

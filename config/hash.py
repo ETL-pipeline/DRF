@@ -81,8 +81,8 @@ def tolerantia():
     temp = dict()
     temp['recordid'] = data['user_id']
     temp['timestamp'] = math.trunc(epoch_time)
-    enc = HD.encrypt_data(data['detail'])
-    print(gzip.compress(enc))
+    #enc = HD.encrypt_data(data['detail'])
+    #print(gzip.compress(enc))
     #temp['data'] = gzip.compress(enc).decode('utf-8')
     temp['data'] = HD.encrypt_data(data['detail']).decode('utf-8')
 
