@@ -13,8 +13,6 @@ class SigninView(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception = True) # is_valid에서 체크에서 에러가 날 때, ValidationError를 raise
         token = serializer.validated_data
-        print(token)
-        print(serializer)
         refresh_token = token['refresh_token']
         access_token = token['access_token']
         res = Response(

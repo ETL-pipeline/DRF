@@ -13,7 +13,7 @@ def create_id(num):
             "phone_number":f"010{random.randint(10000000,99999999)}",
             "age":random.randint(1,100)
         }
-        response = requests.post("http://127.0.0.1:8000/user/signup/", json=bot)
+        requests.post("http://127.0.0.1:8000/user/signup/", json=bot)
     return '성공'
 
 if __name__ == '__main__':

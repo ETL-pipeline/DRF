@@ -25,7 +25,7 @@ class BlogList(generics.ListCreateAPIView):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
-        logger.info('Get blogview', extra={'request':request,'user_id':self.request.user.id})
+        logger.info('Get blogview', extra={'request':request, 'user':self.request.user.pk})
         tolerantia()
         return Response(serializer.data)
 
@@ -39,7 +39,7 @@ class BlogCreate(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
-        logger.info('POST Blog create', extra={'request':request, 'user_id':self.request.user.id})
+        logger.info('POST Blog create', extra= {'request':request, 'user':self.request.user.id})
         tolerantia()
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
