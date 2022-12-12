@@ -32,15 +32,17 @@ class Compress:
     def resub(self,date):
 
         new = re.sub(r"[^0-9]", "", date)
-        return str(new)
+        return new
     
     def transform_method(self,data):
 
+        global dictlist
         if data in dictlist[0]:
             return dictlist[0][data]
 
     def transform_levelname(self,data):
 
+        global dictlist    
         if data in dictlist[1]:
             return dictlist[1][data]
 

@@ -6,7 +6,8 @@ import json, math, gzip
 from dateutil import parser
 # https://ddolcat.tistory.com/713
 from pathlib import Path
-import os
+import os, time
+from datetime import datetime
 import pymysql
 import environ
 
@@ -45,14 +46,14 @@ class HashDjango:
         #  >> 메서드를 호출할때 마다 새로운 키값 계속 형성
         i=1
         encrypt_str = self.fernet.encrypt(f"{data}".encode('ascii'))
-        # print(encrypt_str)
+        
         return encrypt_str
 
     def decrypt_data(self, encrypted_str):
         key = ENCRYPT_KEY.encode('ascii')
         fernet = Fernet(key)
         decrypt_str = fernet.decrypt(encrypted_str)
-        # print(decrypt_str)
+        
         return decrypt_str
 
     def gen_fernet_key(self, passcode:bytes) -> bytes:
@@ -69,22 +70,17 @@ HD = HashDjango(bytes(ENCRYPT_KEY, 'utf-8'))
 def tolerantia():
     with open('logs/mysite.log','r') as f:
         line = f.readlines()[-1]
-    
+   
     data = json.loads(line)
-    # print(type(data))
-    # print(data)
-    # print(data['detail'])
     
-    time = data['inDate']
-    epoch_time = parser.parse(time).timestamp()
-
+    indate = data['inDate']   
+    epoch_time = time.mktime(datetime.strptime(indate, '%y%m%d%H%M%S%f').timetuple())
+    
     temp = dict()
     temp['recordid'] = data['user_id']
     temp['timestamp'] = math.trunc(epoch_time)
-    #enc = HD.encrypt_data(data['detail'])
-    #print(gzip.compress(enc))
-    #temp['data'] = gzip.compress(enc).decode('utf-8')
     temp['data'] = HD.encrypt_data(data['detail']).decode('utf-8')
+  
 
     json_ = json.dumps(temp, indent=4)+',\n'
 
