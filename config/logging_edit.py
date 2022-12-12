@@ -21,7 +21,13 @@ class MyCustomJsonFormatter(json_log_formatter.JSONFormatter):
                 extra['user_id'] = str(B64UUID(id[:32])) + str(B64UUID(id[32:]))
             else:
                 extra['user_id'] = None
-        extra['inDate'] = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
+        time_str_compress_format = "%y%m%d%H%M%S%f"
+        time_str_format = "%Y-%m-%dT%H:%M:%S.%fZ"
+
+        time = datetime.fromtimestamp(record.__dict__['created']).strftime('%Y-%m-%dT%X.%f')[:-3]+'Z'
+        time_for_convert = datetime.strptime(time, time_str_format)       
+
+        extra['inDate'] = datetime.strftime(time_for_convert, time_str_compress_format)[:-3]
         extra['detail'] = {'message': message, 'levelname': record.__dict__['levelname']}
         extra.pop('request', None)
         compress(extra)

@@ -1,10 +1,8 @@
-import hashlib, base64
 from cryptography.fernet import Fernet
 from .settings import env
-import json
+import json, os, time, gzip, math, hashlib, base64
 from dateutil import parser
-import gzip
-import os
+from datetime import datetime
 from b64uuid import B64UUID
 from config import s3uploading
 # https://ddolcat.tistory.com/713
@@ -53,11 +51,11 @@ def tolerantia():
         line = f.readlines()
     
     data = json.loads(line[-1])
-    time = data['inDate']
-    epoch_time = parser.parse(time).timestamp()
+    indate = data['inDate']
+    epoch_time = time.mktime(datetime.strptime(indate, '%y%m%d%H%M%S%f').timetuple())
     temp = dict()
     temp['recordid'] = data['user_id']
-    temp['timestamp'] = epoch_time
+    temp['timestamp'] = math.trunc(epoch_time)
     temp['data'] = HD.encrypt_data(data['detail']).decode('utf-8')
 
     json_ = json.dumps(temp, indent=4)+',\n'
